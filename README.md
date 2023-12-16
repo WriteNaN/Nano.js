@@ -24,6 +24,6 @@ Much thanks to them who helped me with thier libs:
 | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-*special thanks to [nanswap nodes](https://nanswap.com/nodes) for letting me use their nodes for free! <3*
+*special thanks to [nanswap nodes](https://nanswap.com/nodes) for letting me use their nodes! <3*
 
-> &copy; Celio Sevii 2024
+> &copy; Celio Sevii 2024, you are free to use it for commercial products :D
