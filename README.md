@@ -17,7 +17,7 @@
 
 ### Credits
 
-Much thanks to them who helped me with their libs:
+Much thanks to them who helped me with libs:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars.githubusercontent.com/u/22433963?v=4" width="75px;"/><br /><sub>Benskalz</sub>](http://www.nanswap.com)<br />[💻](https://github.com/Benskalz/simple-nano-wallet-js) | [<img src="https://avatars.githubusercontent.com/u/6938280?v=4" width="75px;"/><br /><sub>Numsu</sub>](http://github.com/numsu)<br />[💻](https://github.com/numsu/nanocurrency-web-js) | [<img src="https://avatars.githubusercontent.com/u/990773?v=4" width="75px;"/><br /><sub>Marvin Roger</sub>](https://github.com/marvinroger)<br />[💻](https://github.com/marvinroger/nanocurrency-js/) |
