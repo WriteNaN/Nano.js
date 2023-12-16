@@ -13,8 +13,6 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-export { nanoToRaw, rawToNano }
-
 class Wallet extends EventEmitter {
   ws: WebSocket;
   rpc: RPC;
@@ -208,4 +206,4 @@ class Wallet extends EventEmitter {
   }
 }
 
-export { Wallet };
+export { Wallet, nanoToRaw, rawToNano };
