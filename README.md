@@ -1,4 +1,12 @@
-# Nano.js
+<div style="text-align: center;">
+  <h1><img src="https://cdn.discordapp.com/emojis/876897668373307392.webp?size=48&quality=lossless" style="vertical-align: middle;" /> Nano.js </h1>
+  <p>Interact with the nano blockchain using javascript easily! 🔥</p>
+</div>
+
+
+<img src="https://github.com/WriteNaN/Nano.js/assets/151211283/3b1f8f24-64c5-4919-a95b-9684a5938c46" style="border-radius: 20px;" />
+
+
 
 Table of contents
 =================
