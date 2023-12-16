@@ -208,4 +208,4 @@ class Wallet extends EventEmitter {
   }
 }
 
-export default Wallet;
+export { Wallet };
