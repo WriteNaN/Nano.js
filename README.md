@@ -21,6 +21,8 @@ Table of contents
         - [Send Nano](#send-nano)
         - [Set Representative](#set-representative)
       - [Reset Wallet](#reset-wallet)
+     - [Receive Nano](#receiving-nano)
+     - [Events](#wallet-events)
   - [Credits](#credits)
 <!--te-->
 
@@ -97,6 +99,23 @@ const representativeResult = await wallet.setRepresentative({
 ### Reset Wallet
 ```javascript
 wallet.resetWallet();
+```
+⚠️ this function removes all db files and config
+
+## Receiving Nano
+Single Block
+```javascript
+const received = await wallet.Block().receive({hash, amount}, privateKey);
+```
+All Transactions
+```javascript
+const allArrayReceived = await wallet.Block().receiveAll(privateKey);
+```
+
+#### Wallet Events
+```javascript
+wallet.on("ready", () => callback); // emitted upon wallet initialization
+wallet.on("receive/send/representative", (hash) => console.log(hash.hash); 
 ```
 
 
