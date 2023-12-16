@@ -114,7 +114,7 @@ const allArrayReceived = await wallet.Block().receiveAll(privateKey);
 
 #### Wallet Events
 ```javascript
-wallet.on("ready", () => callback); // emitted upon wallet initialization
+wallet.once("ready", () => callback); // emitted upon wallet initialization
 wallet.on("receive/send/representative", (hash) => console.log(hash.hash); 
 ```
 
