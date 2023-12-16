@@ -1,4 +1,4 @@
-# Wallet Lib
+# Nano.js
 
 ### Wallet Functions
 > consists of block functions, websocket, rpc, privacy addons and an embedded database for storing wallet state 
