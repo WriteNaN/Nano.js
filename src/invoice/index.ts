@@ -153,4 +153,4 @@ export default class InvoiceBuilder extends EventEmitter {
   }
 }
 
-export { createQr, InvoiceBuilder, InvoiceStatus };
+export { createQr, InvoiceStatus };
