@@ -40,6 +40,17 @@ Table of contents
       - [Remove Invoice](#remove-invoice)
       - [Invoice Events](#invoice-events)
     - [Creating QRs](#creating-qrs)
+    - [Using RPC Directly](#rpc-usage)
+      - [Constructor](#rpc-constructor)
+      - [Account Info](#account-info)
+      - [Generate Work](#work-generate)
+      - [Receivable](#receivable)
+      - [Process](#process)
+      - [Custom Call](#custom-call)
+    - [Using WS Directly](#ws-usage)
+      - [Constructor](#ws-constructor)
+      - [Send WS](#send-to-ws)
+      - [WS Events](#ws-events)
   - [Credits](#credits)
 <!--te-->
 
@@ -208,7 +219,7 @@ payment events are only available if liveUpdate is enabled and a valid nano ws u
 ### Creating QRs
 ```javascript
 const qrResult = await createQr({
-  address: <address>,
+  address: "address",
   amount: integer, 
   label: "Example Label",
   message: "Example Message",
@@ -225,7 +236,54 @@ const qrResult = await createQr({
   </div>
 </div>
 
+### RPC Usage
+#### RPC Constructor
+```javascript
+const rpc = new RPC(RPC_URL = "nano rpc url", customHeaders: Record, WORK_URL? = "rpc url used if not found");
+```
+#### Account Info
+```javascript
+await rpc.account_info(address);
+```
+#### Work Generate
+```javascript
+await rpc.generate_work(hash);
+```
+#### Receivable
+```javascript
+await rpc.receivable(address);
+```
+#### Process
+```javascript
+await rpc.process();
+```
+this is used to publish signed blocks to the blockchain through the node
+#### Custom Call
+```javascript
+await rpc.request({
+"action",
+...params
+});
+```
+this method can be used to invoke any available rpc function, please refer to official rpc docs [here](https://docs.nano.org/commands/rpc-protocol/) to find available rpc commands
 
+### WS Usage
+#### WS Constructor
+```javascript
+const ws = new WebSocket(ws_url: string)
+```
+#### Send To Ws
+check params which are available to use [here](https://docs.nano.org/integration-guides/websockets/)
+```javascript
+ws.send(json)
+```
+#### WS Events
+```javascript
+ws.on("ready", () => console.log("socket opened");
+ws.on("error", (error) => console.log("socket exitted with error," e);
+ws.on("close", (event) => console.log("ws closed") // reconnects by default
+ws.on("message", (message) => console.log(`received message from socket ${message});
+```
 
 ### Credits
 
