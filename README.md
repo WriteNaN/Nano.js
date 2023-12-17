@@ -1,3 +1,4 @@
+##### Integrate nano to your service today!
 <div style="text-align: center;">
   <h1><img src="https://cdn.discordapp.com/emojis/876897668373307392.webp?size=48&quality=lossless" style="vertical-align: middle;" /> Nano.js </h1>
   <p>Interact with the nano blockchain using javascript easily! 🔥</p>
@@ -13,7 +14,7 @@ Table of contents
 
 <!--ts-->
 **Table of Contents**
-- [Nano.js](#nanojs)
+- [Nano.js](#integrate-nano-to-your-service-today)
   - [Introduction](#introduction)
   - [Wallet Functions](#wallet-functions)
   - [Example Usage](#example-usage)
@@ -31,6 +32,14 @@ Table of contents
       - [Reset Wallet](#reset-wallet)
      - [Receive Nano](#receiving-nano)
      - [Events](#wallet-events)
+    - [Invoice Class](#creating-invoices)
+      - [Invoice Builder](#invoice-builder)
+      - [Creating Invoices](#creating-invoices)
+      - [Retrieve Invoice](#retrieving-invoices)
+      - [Check Status](#fetch-status)
+      - [Remove Invoice](#remove-invoice)
+      - [Invoice Events](#invoice-events)
+    - [Creating QRs](#creating-qrs)
   - [Credits](#credits)
 <!--te-->
 
@@ -125,6 +134,97 @@ const allArrayReceived = await wallet.Block().receiveAll(privateKey);
 wallet.once("ready", () => callback); // emitted upon wallet initialization
 wallet.on("receive/send/representative", (hash) => console.log(hash.hash); 
 ```
+
+### Creating Invoices
+#### Invoice Builder 
+```javascript
+const invoice = new InvoiceBuilder({
+  useRaw: false, // raw nano values
+  liveUpdate: true, // uses websocket
+  rpcEndpoint: "nano_rpc_url",
+  wsEndpoint?: "Websocket url if you\'re using it",
+  customHeaders: { /* add your custom headers if needed */ },
+  maxHistory: "50", // this is the history calls to check if ws is disabled
+});
+```
+you initialize your invoice builder class here and can further use our functions
+#### Creating Invoices
+```javascript
+const newInvoice = invoice.create(options: {
+recipientAddress: "the address to receive nano on",
+amountNano: amount,
+label?: string,
+message?: message,
+roundingPercent: integer
+});
+```
+- label and message are optional values for the QRCode
+- roundingPercent is the % you are okay at neglecting if the sender makes a small percent difference in payment, i would suggest setting it to zero if you are creating multiple invoices on same address
+
+@ returns invoice ID
+
+#### Retrieving Invoices
+```javascript
+const invoiceData = invoice.get(newInvoiceId);
+
+// returns:
+{
+  id: 'invoice id',
+  data: {
+    uri: 'nano:<address>?amount=<raw>&label=if?&message=if?',
+    qrCode: QRBUFFER,
+    address: '<address>',
+    amount: '<raw>',
+    label?: string,
+    message?: string,
+    roundingPercent: integer,
+    status: 'waiting',
+    invoiceId: 'invoice id'
+  }
+}
+```
+#### Fetch Status
+```javascript
+await invoice.checkStatus(invoiceID);
+```
+returns null if not found, satisfies payment and returns paid object if received
+#### Remove Invoice
+```javascript
+invoice.remove(invoiceID);
+```
+invoices stay in memory as in a map, remove them through this function.
+#### Invoice Events
+```javascript
+invoice.on("payment", (invoiceData) => {
+  console.log("Payment received:", invoiceData); // payment done on $invoiceID
+});
+
+invoice.on("error", (errorDetails) => {
+  console.error("Error:", errorDetails); // eg: already paid
+});
+```
+payment events are only available if liveUpdate is enabled and a valid nano ws uri is inputted in the `InvoiceBuilder` constructor
+
+### Creating QRs
+```javascript
+const qrResult = await createQr({
+  address: <address>,
+  amount: integer, 
+  label: "Example Label",
+  message: "Example Message",
+  isRaw: false, // Set to true if the amount is already in raw
+});
+```
+<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+  <div style="flex: 1;">
+    <p>@returns uri (nano protocol standard url) and qrCode (buffer), here is an example:</p>
+  </div>
+  <div style="flex: 1; text-align: right;">
+    <img src="https://github.com/WriteNaN/Nano.js/assets/151211283/7d49dcb4-a223-460d-84c3-bc85aca1facb" alt="QR Code" />
+    <p style="text-align: left">PLEASE DONT SEND ANY NANO HERE IT IS AN EXAMPLE QR!</p>
+  </div>
+</div>
+
 
 
 ### Credits
