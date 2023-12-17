@@ -1,3 +1,3 @@
-import { Wallet, nanoToRaw, rawToNano } from "./src";
+import { Wallet, nanoToRaw, rawToNano, randomMasterKey, createQr, InvoiceBuilder, InvoiceStatus } from "./src";
 
-export { Wallet };
+export { Wallet, nanoToRaw, rawToNano, randomMasterKey, createQr, InvoiceBuilder, InvoiceStatus };
