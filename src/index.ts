@@ -207,4 +207,4 @@ class Wallet extends EventEmitter {
   }
 }
 
-export { Wallet, nanoToRaw, rawToNano, InvoiceBuilder, InvoiceStatus, createQr };
+export { Wallet, nanoToRaw, rawToNano, InvoiceBuilder, InvoiceStatus, createQr, RPC, WebSocket };
