@@ -61,7 +61,7 @@ Table of contents
 
 
 ### Installation
-```bash
+```python
 npm i @nano.gift/nano.js --save
 ```
 
