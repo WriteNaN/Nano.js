@@ -16,6 +16,7 @@ Table of contents
 **Table of Contents**
 - [Nano.js](#integrate-nano-to-your-service-today)
   - [Introduction](#introduction)
+  - [Installation](#installation)
   - [Wallet Functions](#wallet-functions)
   - [Example Usage](#example-usage)
   - [Documentation](#documentation)
@@ -68,7 +69,8 @@ Table of contents
 ##### ~a module could easily be extracted from it for devs to easily interact with the nano blockchain, and you're welcome! just dont forget to credit me :3~ Edit: I made it a module for you :D
 
 ## Example Usage
-![image](https://github.com/WriteNaN/Nano.js/assets/151211283/488a79af-a022-42b0-9b34-d15a53f63be9)
+![image](https://github.com/WriteNaN/Nano.js/assets/151211283/3ea2ac66-57f4-4ae6-9c58-03b12017125a)
+
 
 ## Documentation
 ### Wallet Class
