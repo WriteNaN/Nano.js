@@ -1,3 +1,3 @@
-import { Wallet, nanoToRaw, rawToNano, randomMasterKey, createQr, InvoiceBuilder, InvoiceStatus, RPC, WebSocket } from "./src";
+import { Wallet, nanoToRaw, rawToNano, createQr, InvoiceBuilder, InvoiceStatus, RPC, WebSocket } from "./src";
 
-export { Wallet, nanoToRaw, rawToNano, randomMasterKey, createQr, InvoiceBuilder, InvoiceStatus, RPC, WebSocket };
+export { Wallet, nanoToRaw, rawToNano, createQr, InvoiceBuilder, InvoiceStatus, RPC, WebSocket };
