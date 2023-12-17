@@ -59,6 +59,12 @@ Table of contents
 ### Introduction
 > Nano.js is a comprehensive JavaScript library for interacting with the Nano cryptocurrency.
 
+
+### Installation
+```bash
+npm i @nano.gift/nano.js --save
+```
+
 ### Wallet Functions
 > consists of block functions, websocket, rpc, privacy addons and an embedded database for storing wallet state 
 
