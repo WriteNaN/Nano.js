@@ -51,6 +51,7 @@ Table of contents
       - [Constructor](#ws-constructor)
       - [Send WS](#send-to-ws)
       - [WS Events](#ws-events)
+    - [Converting Units](#converting-units)
   - [Credits](#credits)
 <!--te-->
 
@@ -283,6 +284,13 @@ ws.on("ready", () => console.log("socket opened");
 ws.on("error", (error) => console.log("socket exitted with error," e);
 ws.on("close", (event) => console.log("ws closed") // reconnects by default
 ws.on("message", (message) => console.log(`received message from socket ${message});
+```
+
+### Converting Units
+here is an example code to convert between raw and nano
+```javascript
+const toRaw = nanoToRaw(3); // 3000000000000000000000000000000
+const toNano = nanoToRaw(3); // 0.000000000000000000000000000003
 ```
 
 ### Credits
