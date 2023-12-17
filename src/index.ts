@@ -8,6 +8,7 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from 'url';
 import crypto from "crypto";
+import InvoiceBuilder, { createQr, InvoiceStatus } from "./invoice";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -206,4 +207,4 @@ class Wallet extends EventEmitter {
   }
 }
 
-export { Wallet, nanoToRaw, rawToNano };
+export { Wallet, nanoToRaw, rawToNano, InvoiceBuilder, InvoiceStatus, createQr };
