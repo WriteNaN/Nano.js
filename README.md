@@ -61,13 +61,13 @@ Table of contents
 > Nano.js is a comprehensive JavaScript library for interacting with the Nano cryptocurrency.
 
 ### Installation
-```python
+```bash
 npm i @nano.gift/nano.js --save
 ```
 
 ### Building
-run the following commands, lib would have build
-```python
+run the following commands, output created at lib folder.
+```bash
 git clone https://github.com/WriteNaN/Nano.js.git
 npm i
 npm run build
