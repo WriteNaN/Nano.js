@@ -17,6 +17,7 @@ Table of contents
 - [Nano.js](#integrate-nano-to-your-service-today)
   - [Introduction](#introduction)
   - [Installation](#installation)
+  - [Building From Source](#building)
   - [Wallet Functions](#wallet-functions)
   - [Example Usage](#example-usage)
   - [Documentation](#documentation)
@@ -59,10 +60,17 @@ Table of contents
 ### Introduction
 > Nano.js is a comprehensive JavaScript library for interacting with the Nano cryptocurrency.
 
-
 ### Installation
 ```python
 npm i @nano.gift/nano.js --save
+```
+
+### Building
+run the following commands, lib would have build
+```python
+git clone https://github.com/WriteNaN/Nano.js.git
+npm i
+npm run build
 ```
 
 ### Wallet Functions
