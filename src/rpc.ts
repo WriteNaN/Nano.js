@@ -4,7 +4,12 @@
 
 */
 
-import fetch from 'node-fetch';
+let fetch;
+try {
+  fetch = globalThis.fetch || require('node-fetch');
+} catch (error) {
+  fetch = require('node-fetch');
+}
 
 interface RPCParams {
   action: string;

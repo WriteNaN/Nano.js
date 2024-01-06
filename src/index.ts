@@ -1,3 +1,8 @@
+require('@babel/register')({
+  extensions: ['.js', '.ts'],
+});
+
+
 import RPC from "./rpc";
 import WebSocket from "./ws";
 import WalletStorage, { Account, IAccount } from "./db";
@@ -10,9 +15,10 @@ import { fileURLToPath } from 'url';
 import crypto from "crypto";
 import InvoiceBuilder, { createQr, InvoiceStatus } from "./invoice";
 
-const __filename = fileURLToPath(import.meta.url);
 
-const __dirname = path.dirname(__filename);
+// @ts-ignore
+global.__filename = (typeof __filename !== 'undefined') ? __filename : require('url').fileURLToPath(import.meta.url);
+global.__dirname = (typeof __dirname !== 'undefined') ? __dirname : path.dirname(__filename);
 
 class Wallet extends EventEmitter {
   ws: WebSocket;

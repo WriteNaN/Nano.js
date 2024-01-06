@@ -36,6 +36,7 @@ export default class QRCanvas {
 
   //TODO don't pass all options to this class
   constructor(options: RequiredOptions) {
+    // @ts-ignore
     this._canvas = createCanvas(options.width, options.height);
     this._canvas.width = options.width;
     this._canvas.height = options.height;
@@ -380,9 +381,11 @@ export default class QRCanvas {
       }
 
       if (typeof options.imageOptions.crossOrigin === "string") {
+        // @ts-ignore
         image.crossOrigin = options.imageOptions.crossOrigin;
       }
 
+      // @ts-ignore
       this._image = image;
       image.onload = (): void => {
         resolve();

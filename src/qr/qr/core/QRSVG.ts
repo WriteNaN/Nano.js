@@ -412,9 +412,11 @@ export default class QRSVG {
       }
 
       if (typeof options.imageOptions.crossOrigin === "string") {
+        // @ts-ignore
         image.crossOrigin = options.imageOptions.crossOrigin;
       }
 
+      // @ts-ignore
       this._image = image;
       image.onload = (): void => {
         resolve();

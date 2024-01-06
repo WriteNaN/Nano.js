@@ -54,6 +54,7 @@ export default class InvoiceBuilder extends EventEmitter {
 
     const qrResult = await createQr({
       address: recipientAddress,
+      // @ts-ignore
       amount: amountRaw,
       label,
       message,
@@ -127,7 +128,7 @@ export default class InvoiceBuilder extends EventEmitter {
     const { amount, roundingPercent } = invoice;
     const amountIn = new Decimal(rawToNano(amount));
 
-    const rpcResponse = await this.rpc.getAccountHistory(invoice.address, this.maxHistory);
+    const rpcResponse = await this.rpc.getAccountHistory(invoice.address);
 
     if (!rpcResponse || rpcResponse.length === 0) {
       return InvoiceStatus.WAITING;

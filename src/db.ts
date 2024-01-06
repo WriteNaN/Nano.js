@@ -7,14 +7,19 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 import crypto from 'crypto';
+require('@babel/register')({
+  extensions: ['.js', '.ts'],
+});
+
+
 import goodbye from "graceful-goodbye";
 import { v4 as uuid } from "uuid";
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
+// @ts-ignore
+global.__filename = (typeof __filename !== 'undefined') ? __filename : fileURLToPath(import.meta.url);
+global.__dirname = (typeof __dirname !== 'undefined') ? __dirname : require('path').dirname(global.__filename);
 
 interface IWalletStorage {
   initialize(): void;

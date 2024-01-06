@@ -24,6 +24,7 @@ export default class Block {
 
       const account_info = await this.rpc.account_info(address);
 
+      // @ts-ignore
       if (account_info.error) throw new Error("Error from RPC", account_info.error);
 
       const data = {
@@ -47,6 +48,7 @@ export default class Block {
 
       const account_info = await this.rpc.account_info(address);
 
+      // @ts-ignore
       if (account_info.error) throw new Error("Error from RPC", account_info.error);
 
       const data = {

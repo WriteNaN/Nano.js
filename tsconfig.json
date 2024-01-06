@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {                 
+      "target": "es6",                               
+      "module": "commonjs",                     
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "isolatedModules": true,
+      "ignoreDeprecations": "5.0",             
+      "outDir": "./lib/",                    
+      "strict": false,  
+      "esModuleInterop": true,  
+      "skipLibCheck": true,                           
+      "forceConsistentCasingInFileNames": false,
+      "suppressImplicitAnyIndexErrors": true
+    },
+    "include": ["src/**/*.ts"],
+  }
